@@ -6,10 +6,11 @@ import {
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles"; 
+import React from "react";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     navlinks: {
-        marginLeft: theme.spacing(10),
+        marginLeft: theme.spacing(90),
         display: "flex",
       },
     anglings: {
@@ -23,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         textDecoration: "none",
         color: "white",
         fontSize: "20px",
-        marginLeft: theme.spacing(20),
+        marginLeft: theme.spacing(10),
         "&:hover": {
           color: "yellow",
           borderBottom: "1px solid white",
@@ -50,7 +51,7 @@ function Navbar() {
                 About
               </Link>
               <Link to="/feedback" className={classes.link}>
-                Contact
+                Feedback
               </Link>
             </div>
         </Toolbar>
