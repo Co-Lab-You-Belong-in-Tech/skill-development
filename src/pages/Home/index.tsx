@@ -1,40 +1,50 @@
 import React, { FunctionComponent, useState } from "react";
 import CheckBox from "../../components/Checkbox";
-import {career, skills,Career} from "../../data/mockData"
-import ControllableStates  from "../../components/TextBox";
+import { skills, Career } from "../../data/mockData";
+import ControllableStates from "../../components/TextBox";
+import { VscDebugRestart } from "react-icons/vsc";
 
 const Home: FunctionComponent = () => {
   const [checked, setChecked] = useState(false);
-  const [title, setTitle] = useState<Career | null>(null)
- 
+  const [title, setTitle] = useState<Career | null>(null);
 
   return (
     <div>
-      <p>
-        I am a
-        <span>
-          <ControllableStates setTitle={setTitle} />
-        </span>
-      </p>
+      <div className="prev_job">
+        <p className="prev paragraph">I am a</p>
+        <p className="title">
+          <span className="prev">
+            <ControllableStates setTitle={setTitle} />
+          </span>
 
+          <button className="btn-restart">
+            <VscDebugRestart />
+          </button>
+        </p>
+      </div>
       <div className="skills">
         <h2>Choose your skills</h2>
-        <div>
-          {skills.map((skill) => (
-            title && 
-            skill.career.includes(title.id) && 
-            <CheckBox key={skill.id} label={skill.skill} checked={checked} setChecked={setChecked} />
-          ))}
+        <div className="skill-box">
+          {skills.map(
+            (skill) =>
+              title &&
+              skill.career.includes(title.id) && (
+                <button key={skill.id} className="skill-btn">
+                  <CheckBox
+                    label={skill.skill}
+                    checked={checked}
+                    setChecked={setChecked}
+                  />
+                </button>
+              ),
+          )}
         </div>
       </div>
     </div>
   );
 };
 
-
-//           <CheckBox label="true" checked={checked} setChecked={setChecked} />
-//         </div>
-//         <p>
+//
 //           <em>Finding tech roles for you..</em>
 //           <button>Refresh Roles</button>
 //         </p>

@@ -6,7 +6,7 @@ const About: FunctionComponent = () => {
   return (
     <Grid container justifyContent="center" >
       <h1>About</h1>
-      <p style={{padding: "20px"}}>
+      <p  className="about_p">
         Skill Matcha was created to help reduce the confusion that career
         transitioners experience while considering changing career paths. As
         part of the Co.Lab internship program, we hope you enjoy using this tool

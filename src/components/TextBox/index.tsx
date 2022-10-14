@@ -15,12 +15,13 @@ export default function ControllableStates({setTitle}:any) {
       <Autocomplete
         {...defaultProps}
         id="disable-close-on-select"
+        sx={{ width: 300 }}
         disableCloseOnSelect
         onChange={(event: any, newValue: Career | null) => {
             setTitle(newValue);
           }}
         renderInput={(params) => (
-          <TextField {...params} label="Select On Your Career" variant="standard" />
+          <TextField {...params} label="Select Your Career" variant="standard" />
         )}
       />
       
