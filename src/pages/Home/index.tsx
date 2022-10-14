@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState } from "react";
 import CheckBox from "../../components/Checkbox";
-import { skills, Career } from "../../data/mockData";
+import { skills, jobs, Career } from "../../data/mockData";
 import ControllableStates from "../../components/TextBox";
 import { VscDebugRestart } from "react-icons/vsc";
 
@@ -40,20 +40,35 @@ const Home: FunctionComponent = () => {
           )}
         </div>
       </div>
+      <div className="jobs">
+        <em>Finding tech roles for you..</em>
+        <div className="share_roles">
+          <p>Top tech roles based on skills associated with your role</p>
+          <p>Share your matches</p>
+        </div>
+        <div className="list_roles">
+          {jobs.map(
+            (job) =>
+              title &&
+              job.career.includes(title.id) && (// need to fix
+                <ul key={job.id}>
+                  <li>{job.name}</li>
+                </ul>
+              ),
+          )}
+        </div>
+      </div>
     </div>
   );
 };
 
 //
-//           <em>Finding tech roles for you..</em>
-//           <button>Refresh Roles</button>
+//
+//
 //         </p>
 //       </div>
 //       <div className="roles">
-//         <div className="share_roles">
-//           <p>Top tech roles based on skills associated with your role</p>
-//           <p>Share your mathes</p>
-//         </div>
+
 //         <div className="list_roles">
 //           <ul>
 //             <li>UX Writer</li>
