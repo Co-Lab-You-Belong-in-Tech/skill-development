@@ -17,7 +17,7 @@ export const career: Career[] = [
     title: "Data Scientist",
   },
 ];
-
+// career.map((item) => {}
 export const skills = [
   {
     id: 1,

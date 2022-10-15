@@ -7,7 +7,7 @@ import { VscDebugRestart } from "react-icons/vsc";
 const Home: FunctionComponent = () => {
   const [checked, setChecked] = useState(false);
   const [title, setTitle] = useState<Career | null>(null);
-
+  console.log(checked);
   return (
     <div>
       <div className="prev_job">
