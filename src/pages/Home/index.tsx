@@ -58,39 +58,10 @@ const Home: FunctionComponent = () => {
           )}
         </div>
       </div>
+      {/* <div className="feedback">Feedback Paragragh</div>
+      <div className="social_media">Social media links</div> */}
     </div>
   );
 };
-
-//
-//
-//
-//         </p>
-//       </div>
-//       <div className="roles">
-
-//         <div className="list_roles">
-//           <ul>
-//             <li>UX Writer</li>
-//             <li>UX Writer</li>
-//             <li>UX Writer</li>
-//             <li>UX Writer</li>
-//             <li>UX Writer</li>
-//             <li>UX Writer</li>
-//             <li>UX Writer</li>
-//           </ul>
-//         </div>
-//       </div>
-//       <form>
-//         <label>
-//           Name:
-//           <input type="text" name="name" />
-//         </label>
-//         <input type="submit" value="Submit" />
-//           </form>
-//           <footer>The End</footer>
-//     </div>
-//   );
-// };
 
 export default Home;
