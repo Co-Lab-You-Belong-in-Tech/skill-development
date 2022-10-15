@@ -6,15 +6,23 @@ type Props = {
   label: string;
   checked: boolean;
   setChecked: (checked: boolean) => void;
+  setCheckedList: (checkedList:any) => void;
 };
 
-function CheckBox({ label = "false", checked, setChecked }: Props) {
+function CheckBox({ label = "false", checked, setChecked, setCheckedList }: Props) {
   return (
     <FormControlLabel
       control={
         <Checkbox
           defaultChecked={checked}
-          onChange={(e) => setChecked(!checked)}
+          onChange={(e) => {
+            setChecked(!checked)
+            if (e.target.checked) {
+              setCheckedList((prev: any) => [...prev, label]);
+            } else {
+              setCheckedList((prev: any) => prev.filter((item: string) => item !== label));
+            }
+          }}
         />
       }
       label={label}

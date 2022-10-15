@@ -6,8 +6,9 @@ import { VscDebugRestart } from "react-icons/vsc";
 
 const Home: FunctionComponent = () => {
   const [checked, setChecked] = useState(false);
+  const [checkedList, setCheckedList] = useState<string[]>([]);
   const [title, setTitle] = useState<Career | null>(null);
-  console.log(checked);
+  console.log(checkedList);
   return (
     <div>
       <div className="prev_job">
@@ -34,6 +35,7 @@ const Home: FunctionComponent = () => {
                     label={skill.skill}
                     checked={checked}
                     setChecked={setChecked}
+                    setCheckedList={setCheckedList}
                   />
                 </button>
               ),
@@ -47,7 +49,7 @@ const Home: FunctionComponent = () => {
           <p>Share your matches</p>
         </div>
         <div className="list_roles">
-          {jobs.map(
+          {checkedList.length > 0 && jobs.map(
             (job) =>
               title &&
               job.career.includes(title.id) && (// need to fix
