@@ -4,6 +4,7 @@ import { skills, jobs, Career } from "../../data/mockData";
 import ControllableStates from "../../components/TextBox";
 import { VscDebugRestart } from "react-icons/vsc";
 
+
 const Home: FunctionComponent = () => {
   const [checked, setChecked] = useState(false);
   const [title, setTitle] = useState<Career | null>(null);
@@ -41,18 +42,18 @@ const Home: FunctionComponent = () => {
         </div>
       </div>
       <div className="jobs">
-        <em>Finding tech roles for you..</em>
-        <div className="share_roles">
+        {/* <em>Finding tech roles for you..</em> */}
+        {/* <div className="share_roles">
           <p>Top tech roles based on skills associated with your role</p>
           <p>Share your matches</p>
-        </div>
+        </div> */}
         <div className="list_roles">
           {jobs.map(
             (job) =>
               title &&
               job.career.includes(title.id) && (// need to fix
                 <ul key={job.id}>
-                  <li>{job.name}</li>
+                  <li>{job.name}<a href ={job.info} target="_blank" rel="noreferrer"  >Check here</a></li>
                 </ul>
               ),
           )}
