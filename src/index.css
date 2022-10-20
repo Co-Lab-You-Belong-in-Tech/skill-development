@@ -12,6 +12,14 @@ code {
     monospace;
 }
 
+.upper-section {
+  background-image: url("assets/background.png");
+}
+
+.lower-section {
+  background-color: #fff;
+}
+
 .prev_job {
   display: flex;
   justify-content: center;
@@ -128,6 +136,15 @@ code {
 .list_roles li {
   font-size: 28px;
   font-weight: 500;
+}
+
+.list-btn {
+  all: unset;
+}
+
+.list-btn a{
+  text-decoration:none;
+  color: black;
 }
 
 .about_p {
