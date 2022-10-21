@@ -113,12 +113,37 @@ code {
   justify-content: center;
   padding: 20px;
 }
+.loading-img{ 
+  animation-name: my-animation;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  width: 32px;
+  height: 32px;
+  left: 0; 
+  right: 0; 
+  margin-left: auto;
+  margin-right: auto;
+}
 
-.share_roles p {
-  display: inline-block;
+@keyframes my-animation {
+  from {
+    width: 32px;
+    top: 10px;
+  }
+  to {
+    width: 50px;
+    top: 20px;
+  }
+}
+
+
+.share_roles {
+  display: flex;
   padding: 10px;
   margin: 10px;
-  border: 1px solid rebeccapurple;
+  gap: 550px;
 }
 
 .list_roles {
@@ -140,11 +165,38 @@ code {
 
 .list-btn {
   all: unset;
+  cursor: pointer;
 }
 
-.list-btn a{
-  text-decoration:none;
+.list-btn a {
+  text-decoration: none;
   color: black;
+  cursor: pointer;
+}
+
+.share-icons {
+  display: flex;
+  cursor: pointer;
+}
+
+.share-btn {
+  display: flex;
+  flex-direction: row;
+  padding: 24px 32px 24px 40px;
+  gap: 24px;
+  background: #000000;
+  border-radius: 16px;
+  color: #fff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  width: 408px;
+  height: 80px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  cursor: pointer;
 }
 
 .about_p {
@@ -159,4 +211,48 @@ code {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+footer p {
+  width: 366px;
+  height: 29px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+
+.footer-btn {
+  display: flex;
+  padding: 24px 32px 24px 40px;
+  gap: 24px;
+  width: 456px;
+  height: 80px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  background: #000000;
+  border-radius: 16px;
+  cursor: pointer;
+  margin-bottom: 30%;
+}
+
+.icon-grp {
+  display: flex;
+  justify-content: space-between;
 }

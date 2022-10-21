@@ -17,7 +17,7 @@ const useStyles = makeStyles(() => ({
     fontSize: "20px",
   },
   icon: {
-    color: "white",
+    color: "black",
   },
 }));
 
