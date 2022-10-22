@@ -64,7 +64,7 @@ function Navbar() {
             <Link to="/about" className={classes.link}>
               About
             </Link>
-            <Link to="/faq" className={classes.link}>
+            <Link to="/feedback" className={classes.link}>
                 <img src={chatIcon} alt="chatIcon" />
             </Link>
           </div>
