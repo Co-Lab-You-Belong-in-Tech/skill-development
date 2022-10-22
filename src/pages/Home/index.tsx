@@ -29,7 +29,6 @@ const Home: FunctionComponent = () => {
             <span className="prev">
               <ControllableStates setTitle={setTitle} />
             </span>
-
             <button className="btn-restart">
               <VscDebugRestart />
             </button>
