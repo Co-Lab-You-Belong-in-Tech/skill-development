@@ -1,7 +1,17 @@
-import { AppBar, Toolbar, CssBaseline, Typography } from "@material-ui/core";
-import { Link } from "react-router-dom";
-import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import React from "react";
+import {
+  AppBar,
+  Toolbar,
+  CssBaseline,
+  Typography,
+  useTheme,
+  useMediaQuery,
+} from "@material-ui/core";
+import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
+import DrawerComponent from "../Drawer";
+import skillMatcha from "../../assets/logo.png";
+import chatIcon from "../../assets/chat.png"
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -16,16 +26,15 @@ const useStyles = makeStyles((theme: Theme) =>
     logo: {
       cursor: "pointer",
       textDecoration: "none",
-      color:"green"
     },
     link: {
       textDecoration: "none",
       color: "black",
       fontSize: "20px",
-      marginLeft: theme.spacing(10),
+      marginLeft: theme.spacing(5),
       "&:hover": {
-        color: "blue",
-        borderBottom: "1px solid white",
+        color: "#C9E265",
+        borderBottom: "1px solid #C9E265",
       },
     },
   }),
@@ -33,26 +42,33 @@ const useStyles = makeStyles((theme: Theme) =>
 
 function Navbar() {
   const classes = useStyles();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <AppBar position="static" color="transparent">
+    <AppBar elevation={0} position="static" color="transparent">
       <CssBaseline />
       <Toolbar>
-        <Typography variant="h5">
-          
-          <Link to="/" className={classes.logo}>SKILL MATCHA</Link>
-        </Typography>
-        <div className={classes.navlinks}>
+        <Typography variant="h4" className={classes.logo}>
           <Link to="/" className={classes.link}>
-            Home
-          </Link>
-          <Link to="/about" className={classes.link}>
-            About
-          </Link>
-          <Link to="/feedback" className={classes.link}>
-            Feedback
-          </Link>
-        </div>
+              <img src={skillMatcha} alt="logo" />
+            </Link>
+        </Typography>
+        {isMobile ? (
+          <DrawerComponent />
+        ) : (
+          <div className={classes.navlinks}>
+            <Link to="/" className={classes.link}>
+              
+            </Link>
+            <Link to="/about" className={classes.link}>
+              About
+            </Link>
+            <Link to="/faq" className={classes.link}>
+                <img src={chatIcon} alt="chatIcon" />
+            </Link>
+          </div>
+        )}
       </Toolbar>
     </AppBar>
   );
