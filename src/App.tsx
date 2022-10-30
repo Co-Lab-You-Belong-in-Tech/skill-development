@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router,Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -7,6 +7,8 @@ import FeedBack from './pages/Feedback';
 
 
 function App() {
+    useEffect(() => {
+    }, [])
     return (
         <Router>
             <Navbar />

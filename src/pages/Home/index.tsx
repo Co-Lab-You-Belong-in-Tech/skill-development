@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useEffect, useState } from "react";
 import CheckBox from "../../components/Checkbox";
 import { skills, jobs, Career } from "../../data/mockData";
 import ControllableStates from "../../components/TextBox";
@@ -14,12 +14,47 @@ import linkedinIcon from "../../assets/linkedIn.png";
 import whatsappIcon from "../../assets/whatsapp.png";
 import chatGreen from "../../assets/chat_green.png";
 import loadingIcon from "../../assets/loading.png"
-
+import getAccesToken from "../../services/getAccesToken";
+import getTitle from "../../services/getTitle";
 const Home: FunctionComponent = () => {
   const [checked, setChecked] = useState(false);
   const [checkedList, setCheckedList] = useState<string[]>([]);
   const [title, setTitle] = useState<Career | null>(null);
-  console.log(checkedList);
+  const [titleSelected, setTitleSelected] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const getSkills = async(titleOfname:any) => {
+    getAccesToken().then((res) => {
+      const response = fetch(`https://emsiservices.com/titles/versions/latest/titles/${titleOfname}`, {
+        headers: {
+          "Authorization": `Bearer ${res.access_token}`,
+        }
+      });
+      response.then((res) => {
+        res.json().then((res) => {
+          console.log(res);
+        })
+      })
+    });
+  };
+
+
+
+
+  useEffect(() => {
+    setLoading(true);
+    getTitle().then((res) => {
+       setTitle(res.data);
+       setLoading(false);
+        });
+  }, []);
+  if(loading){
+    return(
+      <div className="loading">
+        <img  alt="loading" />
+      </div>
+    )
+  }
   return (
     <div>
       <section className="upper-section">
@@ -27,7 +62,7 @@ const Home: FunctionComponent = () => {
           <p className="prev paragraph">I am a</p>
           <p className="title">
             <span className="prev">
-              <ControllableStates setTitle={setTitle} />
+              {title && <ControllableStates setTitle={getSkills} title={title} />}            
             </span>
             <button className="btn-restart">
               <VscDebugRestart />

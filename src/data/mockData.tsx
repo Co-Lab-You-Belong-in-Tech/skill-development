@@ -1,22 +1,8 @@
 export interface Career {
-  title: string;
+  name: string;
   id: number;
 }
 
-export const career: Career[] = [
-  {
-    id: 1,
-    title: "Marketer",
-  },
-  {
-    id: 2,
-    title: "Project Manager",
-  },
-  {
-    id: 3,
-    title: "Business Analyst",
-  },
-];
 // career.map((item) => {}
 export const skills = [
   {
