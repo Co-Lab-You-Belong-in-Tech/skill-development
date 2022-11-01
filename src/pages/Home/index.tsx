@@ -1,7 +1,8 @@
 import React, { FunctionComponent, useState } from "react";
-import {
-  useMediaQuery,useTheme
-} from "@material-ui/core";
+// import {
+//   useMediaQuery,useTheme
+// } from "@material-ui/core";
+import Footer from "../../components/Footer";
 import CheckBox from "../../components/Checkbox";
 import { skills, jobs, Career } from "../../data/mockData";
 import RenderGroup from "../../components/TextBox";
@@ -9,22 +10,13 @@ import { VscDebugRestart } from "react-icons/vsc";
 import skillIcon from "../../assets/skillIcon.png";
 import mailIcon from "../../assets/mailIcon.png";
 import downLoadIcon from "../../assets/download_light.png";
-import rightImage from "../../assets/right_group.png";
-import leftImage from "../../assets/left_group.png";
-import facebookIcon from "../../assets/facebook.png";
-import twitterIcon from "../../assets/twitter.png";
-import linkedinIcon from "../../assets/linkedIn.png";
-import whatsappIcon from "../../assets/whatsapp.png";
-import chatGreen from "../../assets/chat_green.png";
 import loadingIcon from "../../assets/loading.png"
-import mobileImage from "../../assets/mobile_footer.png"
+
 
 const Home: FunctionComponent = () => {
   const [checked, setChecked] = useState(false);
   const [checkedList, setCheckedList] = useState<string[]>([]);
   const [title, setTitle] = useState<Career | null>(null);
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   console.log(checkedList);
   return (
     <div>
@@ -94,41 +86,7 @@ const Home: FunctionComponent = () => {
           </div>
         ) : (<div className="jobs"><em>Finding tech roles for you..</em><img className="loading-img" src={loadingIcon } alt="loading"/></div>)}
       </section>
-       {isMobile? (<footer>
-       
-        <img src={mobileImage} alt="left" />
-        <div>
-          <p>Were this suggestion helpful?</p>
-          <button className="footer-btn">
-            Tell us about your experience <img src={chatGreen} alt="mail" />
-          </button>
-          <p>Tell someone about SkillMatcha!</p>
-          <div className="icon-grp">
-            <img src={facebookIcon} alt="facebook" />
-            <img src={twitterIcon} alt="twitter" />
-            <img src={linkedinIcon} alt="linkedIn" />
-            <img src={whatsappIcon} alt="whatsapp" />
-          </div>
-        </div>
-            </footer>):(<footer>
-       
-        <img src={leftImage} alt="left" />
-        <div>
-          <p>Were this suggestion helpful?</p>
-          <button className="footer-btn">
-            Tell us about your experience <img src={chatGreen} alt="mail" />
-          </button>
-          <p>Tell someone about SkillMatcha!</p>
-          <div className="icon-grp">
-            <img src={facebookIcon} alt="facebook" />
-            <img src={twitterIcon} alt="twitter" />
-            <img src={linkedinIcon} alt="linkedIn" />
-            <img src={whatsappIcon} alt="whatsapp" />
-          </div>
-        </div>
-        <img src={rightImage} alt="right" />
-      </footer>)}
-      
+       <Footer />
     </div>
   );
 };

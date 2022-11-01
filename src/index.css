@@ -113,31 +113,42 @@ code {
   justify-content: center;
   padding: 20px;
 }
-.loading-img{ 
+.loading-img {
   animation-name: my-animation;
-  animation-duration: 1s;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
   width: 32px;
   height: 32px;
-  left: 0; 
-  right: 0; 
+  position: relative;
+  animation: my-animation 6s;
+  animation-direction: alternate;
+  animation-iteration-count: 6;
   margin-left: auto;
   margin-right: auto;
 }
 
 @keyframes my-animation {
-  from {
-    width: 32px;
-    top: 10px;
+  0% {
+    left: 0px;
+    top: 0px;
   }
-  to {
-    width: 50px;
+  25% {
+    filter: blur(4px);
+    left: 20px;
+    top: 0px;
+  }
+  50% {
+    filter: blur(1.2rem);
+    left: 20px;
     top: 20px;
   }
+  75% {
+    left: 0px;
+    top: 20px;
+  }
+  100% {
+    left: 0px;
+    top: 0px;
+  }
 }
-
 
 .share_roles {
   display: flex;
@@ -255,8 +266,37 @@ footer p {
 .icon-grp {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 
-@media only screen and (min-width: 600px){
-  
+@media only screen and (max-width: 768px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+  }
+  .footer-btn {
+    margin-left: 8%;
+    padding: 10px 24px;
+    font-size: 16px;
+    width: 300px;
+    height: 50px;
+  }
+
+  .icon-grp {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+@media only screen and (max-device-width: 1024px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+  }
 }
