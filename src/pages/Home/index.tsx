@@ -84,7 +84,7 @@ const Home: FunctionComponent = () => {
                 ),
             )}
           </div>
-        ) : (<div className="jobs"><em>Finding tech roles for you..</em><img className="loading-img" src={loadingIcon } alt="loading"/></div>)}
+        ) : (<div className="jobs"><em>Finding tech roles for you..</em><div className="loading-img"></div></div>)}
       </section>
        <Footer />
     </div>

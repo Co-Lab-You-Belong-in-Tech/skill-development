@@ -114,12 +114,11 @@ code {
   padding: 20px;
 }
 .loading-img {
-  animation-name: my-animation;
+  background-image: url(/src/assets/loading.png);
   width: 32px;
   height: 32px;
   position: relative;
-  animation: my-animation 6s;
-  animation-direction: alternate;
+  animation: my-animation 4s;
   animation-iteration-count: 6;
   margin-left: auto;
   margin-right: auto;
@@ -127,24 +126,29 @@ code {
 
 @keyframes my-animation {
   0% {
+    background-image: url(/src/assets/loading.png);
     left: 0px;
     top: 0px;
   }
   25% {
-    filter: blur(4px);
+    background-image: url(/src/assets/loading2.png);
+    filter: blur(2px);
     left: 20px;
     top: 0px;
   }
   50% {
-    filter: blur(1.2rem);
+    background-image: url(/src/assets/loading3.png);
     left: 20px;
     top: 20px;
   }
   75% {
+    background-image: url(/src/assets/loading4.png);
+    filter: blur(2px);
     left: 0px;
     top: 20px;
   }
   100% {
+    background-image: url(/src/assets/loading.png);
     left: 0px;
     top: 0px;
   }
