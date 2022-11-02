@@ -64,13 +64,6 @@ code {
   margin-right: 40%;
 }
 
-/* .skill-box {
-  display: flex;
-  margin: 20px;
-  border: 1px solid black;
-  padding: 20px;
-} */
-
 .skill-btn {
   margin: 10px;
   background-color: #ecf9a1;
@@ -94,7 +87,7 @@ code {
   touch-action: manipulation;
 }
 
-.skill-btn:hover {
+/* .skill-btn:hover {
   box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
     rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
     rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
@@ -102,10 +95,7 @@ code {
   transform: scale(1.05) rotate(-1deg);
 }
 
-/* .skill-btn input[type="checkbox"]{
-    -webkit-appearance: none;
-  appearance: none;
-} */
+input.skill-btnbtn:active { background:black } */
 .jobs {
   display: flex;
   flex-direction: column;
@@ -113,6 +103,7 @@ code {
   justify-content: center;
   padding: 20px;
 }
+
 .loading-img {
   background-image: url(/src/assets/loading.png);
   width: 32px;
@@ -273,7 +264,68 @@ footer p {
   cursor: pointer;
 }
 
+/* Mobile Screen */
+
 @media only screen and (max-width: 768px) {
+  .prev_job {
+    display: flex;
+    flex-direction: column;
+  }
+  /* .paragraph {
+    font-size: 10px;
+  }
+
+  .prev {
+    padding: 5px 5px;
+  }
+
+  .title {
+    padding: 2px;
+  }
+  #grouped-demo {
+    width: 150px;
+    height: 40px;
+  } */
+  .skill-box {
+    display: flex;
+    margin: 10px;
+    padding: 5px;
+    width: 400px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+
+  .skill-btn {
+    padding: 2px 6px;
+    width: 200px;
+    height: 40px;
+    font-size: 2px;
+  }
+
+  .share_roles {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 5%;
+    padding: 10px;
+  }
+
+  .share-btn {
+    padding: 10px 24px;
+    font-size: 16px;
+    width: 300px;
+    height: 50px;
+  }
+
+  .list_roles ul {
+    padding: 16px 8px;
+  }
+  .list_roles li {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
   footer {
     display: flex;
     flex-direction: column;
@@ -295,6 +347,7 @@ footer p {
   }
 }
 
+/*Ipad Screen*/
 @media only screen and (max-device-width: 1024px) {
   footer {
     display: flex;

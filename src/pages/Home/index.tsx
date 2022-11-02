@@ -1,19 +1,21 @@
 import React, { FunctionComponent, useState } from "react";
-// import {
-//   useMediaQuery,useTheme
-// } from "@material-ui/core";
 import Footer from "../../components/Footer";
 import CheckBox from "../../components/Checkbox";
 import { skills, jobs, Career } from "../../data/mockData";
-import RenderGroup from "../../components/TextBox";
+import  RenderGroup  from "../../components/TextBox";
 import { VscDebugRestart } from "react-icons/vsc";
 import skillIcon from "../../assets/skillIcon.png";
 import mailIcon from "../../assets/mailIcon.png";
 import downLoadIcon from "../../assets/download_light.png";
-import loadingIcon from "../../assets/loading.png"
-
+// import {
+//   useMediaQuery,useTheme
+// } from "@material-ui/core";
+ 
 
 const Home: FunctionComponent = () => {
+  // const theme = useTheme();
+  //   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   const [checked, setChecked] = useState(false);
   const [checkedList, setCheckedList] = useState<string[]>([]);
   const [title, setTitle] = useState<Career | null>(null);
@@ -25,7 +27,7 @@ const Home: FunctionComponent = () => {
           <p className="prev paragraph">I am a</p>
           <p className="title">
             <span className="prev">
-              <RenderGroup setTitle={setTitle} />
+              <RenderGroup setTitle={setTitle} />             
             </span>
             <button className="btn-restart">
               <VscDebugRestart />
