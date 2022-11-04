@@ -1,19 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-.upper-section {
-  background-image: url("assets/background.png");
+.upper-section,
+.about-bg {
+  background: url("assets/background.png");
+  opacity: 0.8;
 }
 
 .lower-section {
@@ -46,7 +43,6 @@ code {
 }
 
 .btn-restart {
-  font-size: 24px;
   background: none;
   border: none;
 }
@@ -57,11 +53,6 @@ code {
   align-items: center;
   justify-content: center;
   padding: 20px;
-}
-
-.skills h2 {
-  display: flex;
-  margin-right: 40%;
 }
 
 .skill-btn {
@@ -75,27 +66,47 @@ code {
   color: rgb(17, 17, 16);
   cursor: pointer;
   display: inline-block;
-  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
   padding: 4px 28px;
   text-align: center;
   text-decoration: none;
   transition: all 250ms;
   border: 0;
-  font-size: 16px;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
 
-/* .skill-btn:hover {
-  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
-    rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
-    rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
-    rgba(44, 187, 99, 0.25) 0 16px 32px;
-  transform: scale(1.05) rotate(-1deg);
+.skill-btn:hover {
+  background-color: black;
+  color: #fff;
 }
 
-input.skill-btnbtn:active { background:black } */
+.skill-btn:target {
+  background-color: black;
+  color: #fff;
+}
+
+/* .skill-btn2{
+  margin: 10px;
+  background-color: black;
+  border-radius: 100px;
+  box-shadow: rgba(220, 222, 112, 0.2) 0 -25px 18px -14px inset,
+    rgba(142, 211, 169, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
+    rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px,
+    rgba(44, 187, 99, 0.15) 0 16px 32px;
+  color:#fff;
+  cursor: pointer;
+  display: inline-block;
+  padding: 4px 28px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+} */
+
 .jobs {
   display: flex;
   flex-direction: column;
@@ -193,10 +204,9 @@ input.skill-btnbtn:active { background:black } */
   background: #000000;
   border-radius: 16px;
   color: #fff;
-  font-family: "Inter";
   font-style: normal;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 29px;
   width: 408px;
   height: 80px;
@@ -209,6 +219,8 @@ input.skill-btnbtn:active { background:black } */
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 22px;
+  font-weight: 600;
   padding: 20px;
   border: 1px solid black;
   margin-left: 20%;
@@ -217,6 +229,10 @@ input.skill-btnbtn:active { background:black } */
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+h3 {
+  border-bottom: 2px solid black;
 }
 
 footer {
@@ -228,8 +244,6 @@ footer {
 footer p {
   width: 366px;
   height: 29px;
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 600;
   font-size: 24px;
   line-height: 29px;
@@ -240,14 +254,13 @@ footer p {
 
 .footer-btn {
   display: flex;
-  padding: 24px 32px 24px 40px;
-  gap: 24px;
-  width: 456px;
-  height: 80px;
-  font-family: "Inter";
+  padding: 16px;
+  gap: 40px;
+  width: 400px;
+  height: 60px;
   font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
+  font-weight: 400;
+  font-size: 20px;
   line-height: 29px;
   text-align: center;
   letter-spacing: -0.02em;
@@ -264,6 +277,33 @@ footer p {
   cursor: pointer;
 }
 
+.home-btn {
+  display: flex;
+  padding: 6px 24px;
+  background-color: #c9e265;
+  color: #000000;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 150%;
+  margin-top: -30%;
+  cursor: pointer;
+}
+
+.home-btn:hover {
+  background-color: #0b0b0a;
+}
+
+.home-btn a {
+  text-decoration: none;
+  color: #0f0f0f;
+}
+
+.home-btn a:hover {
+  color: #ffffff;
+}
+
+
 /* Mobile Screen */
 
 @media only screen and (max-width: 768px) {
@@ -271,21 +311,11 @@ footer p {
     display: flex;
     flex-direction: column;
   }
-  /* .paragraph {
-    font-size: 10px;
+
+  .btn-restart {
+    display: none;
   }
 
-  .prev {
-    padding: 5px 5px;
-  }
-
-  .title {
-    padding: 2px;
-  }
-  #grouped-demo {
-    width: 150px;
-    height: 40px;
-  } */
   .skill-box {
     display: flex;
     margin: 10px;
@@ -337,13 +367,14 @@ footer p {
     margin-left: 8%;
     padding: 10px 24px;
     font-size: 16px;
-    width: 300px;
+    width: 250px;
     height: 50px;
   }
 
   .icon-grp {
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 100px;
   }
 }
 

@@ -1,7 +1,4 @@
 import * as React from "react";
-// import {
-//   useMediaQuery,useTheme
-// } from "@material-ui/core";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { lighten, darken } from "@mui/system";
@@ -33,8 +30,7 @@ export default function RenderGroup({ setTitle }: any) {
   });
 
   return (
-    <Autocomplete
-      id="grouped-demo"
+    <Autocomplete      id="grouped-demo"
       options={options.sort(
         (a, b) => -b.firstLetter.localeCompare(a.firstLetter),
       )}
@@ -48,7 +44,7 @@ export default function RenderGroup({ setTitle }: any) {
         <TextField {...params} label="Select Your Career" variant="standard" />
       )}
       renderGroup={(params) => (
-        <li>
+        <li key={params.key}>
           <GroupHeader>{params.group}</GroupHeader>
           <GroupItems>{params.children}</GroupItems>
         </li>

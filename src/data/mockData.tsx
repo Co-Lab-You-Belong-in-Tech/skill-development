@@ -1,12 +1,12 @@
 export interface Career {
-  title: string;
+    title: string;
   id: number;
 }
 
 export const career: Career[] = [
   {
     id: 1,
-    title: "Marketer",
+    title: "Product Marketer",
   },
   {
     id: 2,
@@ -16,68 +16,96 @@ export const career: Career[] = [
     id: 3,
     title: "Business Analyst",
   },
+  {
+    id: 4,
+    title: "Human Resource",
+  },
+  {
+    id: 5,
+    title: "Market research analysts",
+  },
+  {
+    id: 6,
+    title: "Content managers",
+  },
+  {
+    id: 7,
+    title: "Finance Manager",
+  },
+    {
+    id: 8,
+    title: "Customer Support Specialist",
+  },
+      {
+    id: 9,
+    title: "Brand Specialist",
+  },
+        {
+    id: 10,
+    title: "Library Assistant",
+  },
 ];
 // career.map((item) => {}
 export const skills = [
   {
     id: 1,
     skill: "HTML",
-    career: [ 2,3],
-    info: "HTML is the standard markup language for creating Web pages.",
+    career: [2,4,8,9],
+    info: "",
   },
   {
     id: 2,
-    skill: "CSS",
-    career: [ 2,3],
-    info: "CSS is the language we use to style an HTML document.",
+    skill: "Adobe",
+    career: [2, 3,9],
+    info: "",
   },
   {
     id: 3,
     skill: "Report Writing",
-    career: [1, 2],
-    info: "JavaScript is the programming language of HTML and the Web.",
+    career: [1, 2,3,5,6,10],
+    info: "",
   },
   {
     id: 4,
     skill: "Python",
-    career: [2, 3],
-    info: "Python is an interpreted, high-level, general-purpose programming language.",
+    career: [3,7],
+    info: "",
   },
   {
     id: 5,
-    skill: "Java",
-    career: [2, 3],
-    info: "Java is a general-purpose programming language that is class-based, object-oriented, and designed to have as few implementation dependencies as possible.",
+    skill: "MsExcel",
+    career: [2, 3,5,4,7,8,10],
+    info: "",
   },
   {
     id: 6,
-    skill: "C++",
-    career: [2, 3],
-    info: 'C++ is a general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language, or "C with Classes".',
+    skill: "Problem Solving",
+    career: [1,2, 3,8],
+    info: '',
   },
   {
     id: 7,
     skill: "Data Analysis",
-    career: [1, 2,3],
-    info: "C# is a general-purpose, multi-paradigm programming language encompassing strong typing, lexically scoped, imperative, declarative, functional, generic, object-oriented, and component-oriented programming disciplines.",
+    career: [ 2, 3,5],
+    info: "",
   },
   {
     id: 8,
     skill: "Content Writing",
-    career: [1, 2,3],
-    info: "C is a general-purpose, procedural computer programming language supporting structured programming, lexical variable scope, and recursion, with a static type system.",
+    career: [1,6],
+    info: "",
   },
   {
     id: 9,
     skill: "Digital Marketing",
-    career: [1,2, 3],
-    info: "R is a programming language and free software environment for statistical computing and graphics supported by the R Foundation for Statistical Computing.",
+    career: [1, 2,5,9],
+    info: "",
   },
   {
     id: 10,
-    skill: "SQL",
-    career: [ 2, 3],
-    info: "SQL is a domain-specific language used in programming and designed for managing data held in a relational database management system, or for stream processing in a relational data stream management system.",
+    skill: "Attention to Detail",
+    career: [1, 2, 3,4,5,6,7,8,9,10],
+    info: "",
   },
 ];
 
@@ -85,16 +113,16 @@ export const jobs = [
   {
     id: 1,
     name: "Full-stack Developer",
-    skills: [2, 3, 4],
-    career: [2,3],
-    info: "https://www.w3schools.com/whatis/whatis_fullstack.asp",
+    skills: [1, 4,6],
+    career: [1, 2],
+    info: "https://www.coursera.org/articles/full-stack-developer",
   },
   {
     id: 2,
     name: "UX-UI Designer",
     skills: [2, 3, 4, 5],
-    career: [1],
-    info: "https://careerfoundry.com/en/blog/ux-design/the-difference-between-ux-and-ui-design-a-laymans-guide/",
+    career: [4,5,10],
+    info: "https://www.coursera.org/articles/ui-vs-ux-design",
   },
   {
     id: 3,
@@ -106,50 +134,50 @@ export const jobs = [
   {
     id: 4,
     name: "Product Manager",
-    skills: [1, 2, 3, 4, 5, 8,9],
-    career: [1, 2],
-    info: "https://www.aha.io/roadmapping/guide/product-management/what-is-the-role-of-a-product-manager",
+    skills: [1, 2, 3, 4, 5, 8, 9],
+    career: [1, 2,10],
+    info: "https://www.coursera.org/articles/what-does-a-product-manager-do?=&trk_ref=search-bar-autorecs",
   },
   {
     id: 5,
-    name: "Programmer",
+    name: "Database Engineer",
     skills: [1, 2, 3, 4, 5],
-    career: [1, 2,3],
-    info: "https://en.wikipedia.org/wiki/Programmer",
+    career: [1, 2, 3,5],
+    info: "https://www.coursera.org/professional-certificates/meta-database-engineer",
   },
   {
     id: 6,
     name: "Digital Assistant",
     skills: [1, 2, 3, 4, 5],
-    career: [1, 2],
-    info: 'https://en.wikipedia.org/wiki/Virtual_assistant',
+    career: [1, 2,3,4],
+    info: "https://www.coursera.org/articles/how-to-become-a-virtual-assistant",
   },
   {
     id: 7,
     name: "UX Writer",
     skills: [1, 2, 3, 4, 5],
-    career: [1, 2],
+    career: [1, 2,6],
     info: "https://www.coursera.org/articles/whats-a-ux-writer",
   },
   {
     id: 8,
     name: "Software Engineer",
     skills: [1, 2, 3, 4, 5],
-    career: [3, 2],
+    career: [3, 2,5,7,8],
     info: "https://www.coursera.org/articles/software-engineer",
   },
   {
     id: 9,
     name: "Data Scientist",
     skills: [1, 2, 3, 4, 5],
-    career: [3, 2],
+    career: [3, 2,],
     info: "https://www.coursera.org/articles/what-is-a-data-scientist",
   },
   {
     id: 10,
     name: "Content Writer",
     skills: [1, 2, 3, 4, 5],
-    career: [1, 2],
-    info: "https://resources.workable.com/content-writer-job-description",
+    career: [1, 2,3,4,5,6,7,9,10],
+    info: "https://www.coursera.org/articles/content-strategy",
   },
 ];

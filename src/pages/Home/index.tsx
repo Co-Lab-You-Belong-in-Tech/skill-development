@@ -7,19 +7,19 @@ import { VscDebugRestart } from "react-icons/vsc";
 import skillIcon from "../../assets/skillIcon.png";
 import mailIcon from "../../assets/mailIcon.png";
 import downLoadIcon from "../../assets/download_light.png";
-// import {
-//   useMediaQuery,useTheme
-// } from "@material-ui/core";
- 
+
 
 const Home: FunctionComponent = () => {
-  // const theme = useTheme();
-  //   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  const [checked, setChecked] = useState(false);
+ const [checked, setChecked] = useState(false);
   const [checkedList, setCheckedList] = useState<string[]>([]);
   const [title, setTitle] = useState<Career | null>(null);
   console.log(checkedList);
+  // const changeColor = (event: React.MouseEvent<HTMLElement>) => {
+  //   event.preventDefault();
+  // setStyle(!style);
+    
+  // }
   return (
     <div>
       <section className="upper-section">
@@ -35,13 +35,14 @@ const Home: FunctionComponent = () => {
           </p>
         </div>
         <div className="skills">
-          <h2>Choose your top 5 skills</h2>
+          {title? (<h2>Choose your top skill</h2>):(null)}
+          
           <div className="skill-box">
             {skills.map(
               (skill) =>
                 title &&
                 skill.career.includes(title.id) && (
-                  <button key={skill.id} className="skill-btn">
+                  <button key={skill.id} className="skill-btn" >
                     <CheckBox
                       label={skill.skill}
                       checked={checked}
