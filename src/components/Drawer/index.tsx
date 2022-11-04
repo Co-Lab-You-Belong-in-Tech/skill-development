@@ -26,7 +26,7 @@ function DrawerComponent() {
   const [openDrawer, setOpenDrawer] = useState(false);
   return (
     <>
-      <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
+      <Drawer anchor="right" open={openDrawer} onClose={() => setOpenDrawer(false)}>
         <List>
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
@@ -40,7 +40,7 @@ function DrawerComponent() {
           </ListItem>
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link className={classes.link} to="/about">Faq</Link>
+              <Link className={classes.link} to="/feedback">Faq</Link>
             </ListItemText>
           </ListItem>
         </List>

@@ -4,26 +4,29 @@ import { Grid } from "@mui/material";
 
 const About: FunctionComponent = () => {
   return (
-    <Grid container justifyContent="center" >
+    <Grid container justifyContent="center"  className="about-bg">
       <h1>About</h1>
       <p  className="about_p">
         Skill Matcha was created to help reduce the confusion that career
         transitioners experience while considering changing career paths. As
-        part of the Co.Lab internship program, we hope you enjoy using this tool
-        as much as we did creating it. Don’t forget to let us know what else you
+        part of the Co.Lab internship program. <br />
+        We hope you enjoy using this tool
+        as much as we did creating it. <br />
+        <br />
+        Don’t forget to let us know what else you
         would like to see by leaving us a review.
       </p>
       <div>
         <h3>Product Management</h3>
-        <p>Wesley Nderi</p>
+        <h4>Wesley Nderi</h4>
         <h3>Product Design</h3>
-        <p>Adaku Nwakanma</p>
+        <h4>Adaku Nwakanma</h4>
         <h3>Development</h3>
-        <p>Atilla Taha Kördüğüm</p>
-        <p>Somdotta Sarkar</p>
-        <p>
+        <h4>Atilla Taha Kördüğüm</h4>
+        <h4>Somdotta Sarkar</h4>
+        <button className="home-btn">
           <Link to="/">Home</Link>
-        </p>
+        </button>
       </div>
       
     </Grid>

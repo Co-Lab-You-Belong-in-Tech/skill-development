@@ -13,7 +13,7 @@ function CheckBox({ label = "false", checked, setChecked, setCheckedList }: Prop
   return (
     <FormControlLabel
       control={
-        <Checkbox
+        <Checkbox          
           defaultChecked={checked}
           onChange={(e) => {
             setChecked(!checked)
