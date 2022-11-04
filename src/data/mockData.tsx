@@ -1,4 +1,5 @@
 export interface Career {
+
     title: string;
   id: number;
 }
@@ -45,6 +46,7 @@ export const career: Career[] = [
     title: "Library Assistant",
   },
 ];
+
 // career.map((item) => {}
 export const skills = [
   {
