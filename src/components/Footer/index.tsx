@@ -22,10 +22,7 @@ const Footer: FunctionComponent = () => {
             <p>Were these suggestions helpful?</p>
 
             <button className="footer-btn">
-              Tell us about your experience
-              <Link to="/feedback">
-                <img src={chatGreen} width="30" height="30" alt="mail" />
-              </Link>
+              <Link to="/feedback">Tell us about your experience</Link> <Link to="/feedback"><img src={chatGreen} alt="mail" width="30" height="30"/></Link>
             </button>
 
             <p>Tell someone about SkillMatcha!</p>
@@ -43,7 +40,7 @@ const Footer: FunctionComponent = () => {
           <div>
             <p>Were these suggestions helpful?</p>
             <button className="footer-btn">
-              Tell us about your experience <Link to="/feedback"><img src={chatGreen} alt="mail" width="30" height="30"/></Link>
+              <Link to="/feedback">Tell us about your experience</Link> <Link to="/feedback"><img src={chatGreen} alt="mail" width="30" height="30"/></Link>
             </button>
             <p>Tell someone about SkillMatcha!</p>
             <div className="icon-grp">

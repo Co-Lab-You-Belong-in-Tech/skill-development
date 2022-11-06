@@ -1,34 +1,27 @@
-
 import React, { FunctionComponent, useState } from "react";
 import Footer from "../../components/Footer";
 import CheckBox from "../../components/Checkbox";
 import { skills, jobs, Career } from "../../data/mockData";
-import  RenderGroup  from "../../components/TextBox";
+import RenderGroup from "../../components/TextBox";
 import { VscDebugRestart } from "react-icons/vsc";
 import skillIcon from "../../assets/skillIcon.png";
 import mailIcon from "../../assets/mailIcon.png";
 import downLoadIcon from "../../assets/download_light.png";
 
-
 const Home: FunctionComponent = () => {
-
- const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(false);
   const [checkedList, setCheckedList] = useState<string[]>([]);
   const [title, setTitle] = useState<Career | null>(null);
   console.log(checkedList);
-  // const changeColor = (event: React.MouseEvent<HTMLElement>) => {
-  //   event.preventDefault();
-  // setStyle(!style);
-    
-  // }
+
   return (
-    <div>
+    <div className="content">
       <section className="upper-section">
         <div className="prev_job">
           <p className="prev paragraph">I am a</p>
           <p className="title">
             <span className="prev">
-              <RenderGroup setTitle={setTitle} />             
+              <RenderGroup setTitle={setTitle} />
             </span>
             <button className="btn-restart">
               <VscDebugRestart />
@@ -36,14 +29,14 @@ const Home: FunctionComponent = () => {
           </p>
         </div>
         <div className="skills">
-          {title? (<h2>Choose your top skill</h2>):(null)}
-          
+          {title ? <h2>Choose your top skill</h2> : null}
+
           <div className="skill-box">
             {skills.map(
               (skill) =>
                 title &&
                 skill.career.includes(title.id) && (
-                  <button key={skill.id} className="skill-btn" >
+                  <button key={skill.id} className="skill-btn">
                     <CheckBox
                       label={skill.skill}
                       checked={checked}
@@ -58,7 +51,7 @@ const Home: FunctionComponent = () => {
       </section>
       <section className="lower-section">
         {checkedList.length > 0 ? (
-          <div className="jobs">            
+          <div className="jobs">
             <div className="share_roles">
               <div className="share-icons">
                 <img src={skillIcon} alt="icon" />
@@ -66,7 +59,8 @@ const Home: FunctionComponent = () => {
               </div>
 
               <button className="share-btn">
-                Share your matches <img src={mailIcon} alt="Mail" />
+                <a href="mailto:nderiwesley@gmail.com">Share your matches</a>{" "}
+                <img src={mailIcon} alt="Mail" />
                 <img src={downLoadIcon} alt="download" />
               </button>
             </div>
@@ -88,9 +82,14 @@ const Home: FunctionComponent = () => {
                 ),
             )}
           </div>
-        ) : (<div className="jobs"><em>Finding tech roles for you..</em><div className="loading-img"></div></div>)}
+        ) : (
+          <div className="jobs">
+            <em>Finding tech roles for you..</em>
+            <div className="loading-img"></div>
+          </div>
+        )}
       </section>
-       <Footer />
+      <Footer />
     </div>
   );
 };

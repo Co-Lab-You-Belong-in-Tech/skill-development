@@ -7,6 +7,22 @@ body {
   font-size: 20px;
 }
 
+.content {
+  overflow-y: scroll;
+  height: 2000px;
+}
+
+.scroll-btn {
+  position: fixed;
+  left: 50%;
+  bottom: 40px;
+  height: 20px;
+  font-size: 3rem;
+  z-index: 1;
+  cursor: pointer;
+  color: #000000;
+}
+
 .upper-section,
 .about-bg {
   background: url("assets/background.png");
@@ -86,27 +102,6 @@ body {
   color: #fff;
 }
 
-/* .skill-btn2{
-  margin: 10px;
-  background-color: black;
-  border-radius: 100px;
-  box-shadow: rgba(220, 222, 112, 0.2) 0 -25px 18px -14px inset,
-    rgba(142, 211, 169, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
-    rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px,
-    rgba(44, 187, 99, 0.15) 0 16px 32px;
-  color:#fff;
-  cursor: pointer;
-  display: inline-block;
-  padding: 4px 28px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 250ms;
-  border: 0;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-} */
-
 .jobs {
   display: flex;
   flex-direction: column;
@@ -167,14 +162,20 @@ body {
   width: 65%;
 }
 
+.list_roles:hover {
+  background-color: #c9e265;
+}
+
 .list_roles ul {
   list-style: none;
   padding: 36px 12px;
   margin: 28px;
   background-color: #fff;
   border-radius: 16px;
+  cursor: pointer;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
 .list_roles li {
   font-size: 28px;
   font-weight: 500;
@@ -213,6 +214,10 @@ body {
   text-align: center;
   letter-spacing: -0.02em;
   cursor: pointer;
+}
+
+.share-btn a {
+  color: #fff;
 }
 
 .about_p {
@@ -254,21 +259,25 @@ footer p {
 
 .footer-btn {
   display: flex;
+  gap: 25px;
+  width: 350px;
   padding: 16px;
-  gap: 40px;
-  width: 400px;
-  height: 60px;
   font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 18px;
   line-height: 29px;
+  height: 60px;
   text-align: center;
   letter-spacing: -0.02em;
-  color: #ffffff;
   background: #000000;
   border-radius: 16px;
   cursor: pointer;
   margin-bottom: 30%;
+}
+
+.footer-btn a {
+  text-decoration: none;
+  color: #ffffff;
 }
 
 .icon-grp {
@@ -302,7 +311,6 @@ footer p {
 .home-btn a:hover {
   color: #ffffff;
 }
-
 
 /* Mobile Screen */
 
@@ -347,13 +355,26 @@ footer p {
     width: 300px;
     height: 50px;
   }
+  .list_roles {
+    cursor: pointer;
+  }
+  .list_roles:hover {
+    background-color: #c9e265;
+  }
 
   .list_roles ul {
     padding: 16px 8px;
+    cursor: pointer;
   }
+
   .list_roles li {
     font-size: 16px;
     font-weight: 600;
+    cursor: pointer;
+  }
+
+  .list-btn a:hover {
+    background-color: #c9e265;
   }
 
   footer {
@@ -366,8 +387,8 @@ footer p {
   .footer-btn {
     margin-left: 8%;
     padding: 10px 24px;
-    font-size: 16px;
-    width: 250px;
+    font-size: 12px;
+    width: 300px;
     height: 50px;
   }
 

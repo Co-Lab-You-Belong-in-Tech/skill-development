@@ -16,7 +16,7 @@ import {
   
   type SetValue<T> = Dispatch<SetStateAction<T>>
   
-  function useLocalStorage<T>(key: string, initialValue: T): [T, SetValue<T>] {
+  function useLocalStorage<T extends SetValue<T>>(key: string, initialValue: T): [T, SetValue<T>] {
     // Get from local storage then
     // parse stored json or return initialValue
     const readValue = useCallback((): T => {
@@ -40,7 +40,7 @@ import {
   
     // Return a wrapped version of useState's setter function that ...
     // ... persists the new value to localStorage.
-    const setValue: SetValue<T> = useEventCallback(value => {
+    const setValue: SetValue<T> = useEventCallback((value: (arg0: T) => any) => {
       // Prevent build error "window is undefined" but keeps working
       if (typeof window === 'undefined') {
         console.warn(

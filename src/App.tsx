@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
 import FeedBack from './pages/Feedback';
+import ScrollButton from './components/ScrollButton';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
                 <Route path="/faq" component={Faq} /> */}
                   <Route path="/feedback" element={<FeedBack/>} />
             </Routes>
-        
+        <ScrollButton />
         </Router>
     )
 }
